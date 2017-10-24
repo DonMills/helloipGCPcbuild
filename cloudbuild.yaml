@@ -1,0 +1,7 @@
+steps:
+- name: 'gcr.io/cloud-builders/go'
+  args: ['build','-a','-ldflags="-s"','helloip.go']
+  env: ['PROJECT_ROOT=helloip','CGO_ENABLED=0']
+- name: 'gcr.io/cloud-builders/docker'
+  args: ['build', '--tag=gcr.io/$PROJECT_ID/helloip', '.']
+images: ['gcr.io/$PROJECT_ID/helloip']
