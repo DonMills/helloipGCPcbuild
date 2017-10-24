@@ -3,5 +3,5 @@ steps:
   args: ['build','-a','-ldflags="-s"','helloip.go']
   env: ['PROJECT_ROOT=helloip','CGO_ENABLED=0']
 - name: 'gcr.io/cloud-builders/docker'
-  args: ['build', '--tag=gcr.io/$PROJECT_ID/helloip', '.']
+  args: ['build', '--tag=gcr.io/$PROJECT_ID/helloip:$TAG_NAME', '.']
 images: ['gcr.io/$PROJECT_ID/helloip']
