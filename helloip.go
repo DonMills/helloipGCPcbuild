@@ -14,7 +14,8 @@ func helloHandler(w http.ResponseWriter, r *http.Request) {
 	}
 	ip, _ := eth.Addrs()
 	hostname, _ := os.Hostname()
-	fmt.Fprintf(w, "<h1>Hello World from %v!</h1>\n<b>My IP address is %v</b>\n", hostname, ip[0])
+	fmt.Fprintf(w, "<h1>Hello World from %v!</h1>\n<b>My IP address is %v</b><br>\n", hostname, ip[0])
+	fmt.Fprintln(w, "This is Version v.03.")
 }
 
 func main() {
